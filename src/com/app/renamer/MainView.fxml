@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.renamer.MainController">
+   <children>
+      <AnchorPane prefHeight="550.0" prefWidth="600.0">
+         <children>
+            <HBox layoutX="246.0" layoutY="156.0" prefHeight="600.0" prefWidth="720.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <VBox prefHeight="600.0" prefWidth="357.0">
+                     <children>
+                        <HBox prefHeight="40.0" prefWidth="356.0">
+                           <children>
+                              <Label prefHeight="39.0" prefWidth="94.0" text="Files to rename :">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblnFiles" prefHeight="39.0" prefWidth="94.0" text=" 0">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <TextArea fx:id="taSelectedFiles" editable="false" prefHeight="443.0" prefWidth="339.0" />
+                     </children>
+                     <padding>
+                        <Insets left="50.0" top="20.0" />
+                     </padding>
+                  </VBox>
+                  <VBox prefHeight="600.0" prefWidth="363.0">
+                     <padding>
+                        <Insets left="50.0" right="20.0" top="40.0" />
+                     </padding>
+                     <children>
+                        <GridPane prefHeight="463.0" prefWidth="343.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="192.0" minWidth="10.0" prefWidth="165.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="111.0" minWidth="10.0" prefWidth="68.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="167.0" minHeight="10.0" prefHeight="78.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="325.0" minHeight="10.0" prefHeight="62.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="372.0" minHeight="10.0" prefHeight="322.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <children>
+                              <VBox prefHeight="94.0" prefWidth="162.0">
+                                 <children>
+                                    <Label alignment="BOTTOM_LEFT" prefHeight="33.0" prefWidth="64.0" text="Name">
+                                       <padding>
+                                          <Insets bottom="3.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="tfName" text="file" />
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label text="Start index">
+                                       <padding>
+                                          <Insets bottom="3.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="tfIndex" text="0" />
+                                 </children>
+                              </VBox>
+                              <Button fx:id="btnFiles" mnemonicParsing="false" onMouseClicked="#openFileChooser" text="Select files" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+                              <Button fx:id="btnRename" mnemonicParsing="false" onMousePressed="#rename" text="Rename" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
